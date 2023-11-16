@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUS Score Calculator</title>
+    <title>SUS Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
-        <h1>SUS Score Calculator</h1>
-        <label for="responses">Enter SUS Scores (comma-separated):</label>
-        <textarea id="responses" placeholder="Enter scores here"></textarea>
-        <button onclick="calculateAverage()">Calculate Average</button>
-        <p id="result">Average SUS Score: <span id="average">0</span></p>
+        <h1>SUS Calculator</h1>
+        <form id="susForm">
+            <p>Please provide your responses to the following statements:</p>
+            <ol>
+                <li>I think that I would like to use this system frequently.</li>
+                <li>I found the system unnecessarily complex.</li>
+                <li>I thought the system was easy to use.</li>
+                <li>I think that I would need the support of a technical person to be able to use this system.</li>
+                <li>I found the various functions in this system were well integrated.</li>
+                <li>I thought there was too much inconsistency in this system.</li>
+                <li>I would imagine that most people would learn to use this system very quickly.</li>
+                <li>I found the system very cumbersome to use.</li>
+                <li>I felt very confident using the system.</li>
+                <li>I needed to learn a lot of things before I could get going with this system.</li>
+            </ol>
+            <label for="responses">Enter your responses (1 to 5):</label>
+            <input type="text" id="responses" placeholder="e.g., 5,4,3,2,1,4,3,2,5,1">
+            <button type="button" onclick="calculateSUS()">Calculate SUS</button>
+        </form>
+        <p id="result">Your SUS Score: <span id="susScore">0</span></p>
     </div>
     <script src="script.js"></script>
 </body>
